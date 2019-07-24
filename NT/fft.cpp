@@ -1,5 +1,6 @@
 // Part-1. http://codeforces.com/blog/entry/43499
 // Part-2. http://codeforces.com/blog/entry/48798
+// https://habr.com/en/post/113642/
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
