@@ -46,6 +46,7 @@ int modExpoIt(int a, int b, int c)
 		if( rightmostBit == 1)
 		{
 			ans=(ans*a)%c;
+			ans=(ans+c)%c;
 		}
 		a = (a*a)%c;
 		b= b/2;
