@@ -8,6 +8,7 @@ using namespace std;
 
 // creating sieve function 
 // returns vector of primes from 2 to 10^10
+// which will lie between 2 to 10^5
 
 vector<int>* sieve()
 {
