@@ -1,3 +1,6 @@
+// STATIC means property belongs to class and not to objects.
+
+
 // PART 1:
 
 #include<bits/stdc++.h>
@@ -54,3 +57,35 @@ int main()
 
 // PART 2:
 
+#include<bits/stdc++.h>
+using namespace std;
+
+//UPDATING STATIC MEMBER OF CLASS WHEN AN OBJECT OF CLASS IS CREATED
+
+class Student{
+public:
+	// non-static:
+	int rollNumber;
+	int age;
+
+	static int totalStudents; //static property: jo generally us object ka koi kaam na ho, group of objects ke lie significance ho
+
+	Student()
+	{
+		// this constructor increases value of totalstudents by 1, whenevr a new object is created
+		totalstudents++;
+	}
+};
+
+int Student::totalStudents = 0;
+
+int main()
+{
+	Student s1;
+	Student s2;
+	Student s3, s4, s5;
+
+	cout<<Student::totalstudents<<endl; // outputs 5	
+
+	return 0;
+}
