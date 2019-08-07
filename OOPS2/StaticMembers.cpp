@@ -89,3 +89,52 @@ int main()
 
 	return 0;
 }
+
+
+// PART 3:
+// when static member is made private and we need to get its value, we make a public function and use to call it outside class using scope reolution op.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//UPDATING STATIC MEMBER OF CLASS WHEN AN OBJECT OF CLASS IS CREATED
+
+class Student{
+
+	static int totalstudents;	// static, made private, now it can be accessed outside the class by public function
+								// but this function doesnt require object
+
+public:
+	// non-static:
+	int rollNumber;
+	int age;
+
+	Student()
+	{
+		totalstudents++;
+	}
+
+	int getRollNumber()
+	{
+		return rollNumber;
+	}
+
+	static int getTotalStudent()	//static because to call this function, object isn't required
+	{
+		return totalstudents;
+	}
+};
+
+int Student::totalStudents = 0;
+
+int main()
+{
+	Student s1;
+	Student s2;
+	Student s3, s4, s5;
+
+	// class::function/property
+	cout<< 	Student::getTotalStudent() <<<endl;
+
+	return 0;
+}
