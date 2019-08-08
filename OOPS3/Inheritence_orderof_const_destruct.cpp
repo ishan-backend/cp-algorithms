@@ -72,3 +72,80 @@ Vehicle's destructor			-- same (parent)
 Vehicle's destructor			-- for v is destroyed
 
 */
+
+
+// PART 2:
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Vehicle{
+private:	
+	int maxSpeed;
+
+protected:	
+	int  numTyres;
+
+public:		
+	string color;
+
+	Vehicle()
+	{
+		cout<<"Vehicle's default constructor"<<endl;
+	}
+
+	// Vehicle class parametrized constructor
+	Vehicle(int z)
+	{
+		cout<<"Vehicle par Constructor"<<endl;
+		maxSpeed = z;
+	}
+
+	~Vehicle()
+	{
+		cout<<"Vehicle's destructor"<<endl;
+	}
+
+};
+
+class Car : public Vehicle{
+public:
+	int numGears;
+
+	//Car default constructor
+	Car(int x):Vehicle(x)	// this constructor calls vehicle class constructor
+	{
+		// x is passed to vehicle class constructor e.g. Car(): Vehicle(50){}, but in main only, Car c;
+		cout<<"Cars deafault constructor calling vehicle constructor, thus initialising vehicles properties before inheriting it";
+	}
+
+	~Car()
+	{
+		cout<<"Car's destructor"<<endl;
+	}
+
+	void print()
+	{
+		cout<<"numTyres" << numTyres<<endl;
+		cout<<"Color:" << color<<endl;
+		
+	}
+};
+
+int main()
+{
+	Car c(50);	// constructor of car class called
+}
+
+/* OUTPUT:
+
+Vehicle par Constructor
+Cars deafault constructor calling vehicle constructor, thus initialising vehicles properties before inheriting it
+Car's destructor
+Vehicle's destructor
+
+
+*/
+
