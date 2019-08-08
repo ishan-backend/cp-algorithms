@@ -149,3 +149,90 @@ Vehicle's destructor
 
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+
+// NOTE: before creating object of Car class, we need to create an object of Vehicle class
+// and initialise its properties which are inherited by car class
+
+
+class Vehicle{
+private:	
+	int maxSpeed;
+
+protected:	
+	int  numTyres;
+
+public:		
+	string color;
+
+	// Vehicle class parametrized constructor
+	Vehicle(int z)
+	{
+		cout<<"Vehicle par Constructor"<<endl;
+		maxSpeed = z;
+	}
+
+	~Vehicle()
+	{
+		cout<<"Vehicle's destructor"<<endl;
+	}
+
+};
+
+class Car : public Vehicle{
+public:
+	int numGears;
+	
+	
+	// NOTE: a class can only call constructor of its immediate parent
+	Car(int x, int y):Vehicle(x)
+	{	
+		cout<<"Cars constructor calling vehicle constructor, thus initialising vehicles properties before inheriting it"<<endl;
+		numGears = y;
+	}
+
+	~Car()
+	{
+		cout<<"Car's destructor"<<endl;
+	}
+
+	void print()
+	{
+		cout<<"numTyres" << numTyres<<endl;
+		cout<<"Color:" << color<<endl;
+		cout<<"numGears:"<< numGears<<endl;
+	}
+};
+
+class HondaCity : public Car{
+public:
+	HondaCity(int x, int y):Car(x, y)
+	{
+		cout<<"Honda city constructor"<<endl;
+	}
+
+	~HondaCity()
+	{
+		cout<<"Honda City destructor"<<endl;
+	}
+};
+
+int main()
+{
+	HondaCity h(4, 5);
+}
+
+/* OUTPUT:
+
+Vehicle par Constructor
+Cars constructor calling vehicle constructor, thus initialising vehicles properties before inheriting it
+Honda city constructor
+Honda City destructor
+Car's destructor
+Vehicle's destructor
+
+
+*/
+
+
