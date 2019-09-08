@@ -23,6 +23,8 @@ using namespace std;
 #define pll pair<int,int>
 #define F first
 #define S second
+#define pqbig priority_queue<int>
+#define pqsmall priority_queue<int,vi,greater<int> >
 #define gc getchar()
 const long double PI = acos(-1.0);
 const int mod = 1000*1000*1000 + 7;
@@ -32,11 +34,12 @@ inline void inc(int &a, int b){ a = add(a, b);}
 inline int sub(int a, int b){ return a-b < 0 ? a-b+mod : a-b;}
 inline void dec(int &a, int b){ a = sub(a, b);}
 
-
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 #define prec(x, n) fixed<<setprecision(n)<<x
 
 void start_func()
 {
+    fastio;
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
@@ -46,15 +49,12 @@ void start_func()
 
 void solve()
 {
+
   
 }
 
 signed main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-
     start_func();
     
     int t=1;
