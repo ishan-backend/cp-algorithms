@@ -1,7 +1,7 @@
 // Update and Query in O(log n)
 // Easy to code
 // Less space
-// n+1 size tree we build, in segment tree we make 3*n size tree
+// n+1 size tree we build, in segment tree we make 4*n size tree
 // in BIT[] we dont store anything at BIT[0]
 // if arr[1] to arr[n] is our input array, our BIT[1] to BIT[n] contains sum
 
