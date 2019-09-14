@@ -34,3 +34,18 @@ bool isPowerOfTwo(int x)
   /* First x in the below expression is for the case when x is 0 */
   return x && (!(x&(x-1))); 
 }
+
+// MODULAR EXPONENTIATION:
+ll inf = 1e12;
+ll mod = 1e9 + 7;
+ll power(ll x, ll n, ll mod) {
+  ll res = 1;
+  x %= mod;
+  while (n) {
+    if (n & 1)
+      res = (res * x) % mod;
+    x = (x * x) % mod;
+    n >>= 1;
+  }
+  return res;
+}
