@@ -1,2 +1,7 @@
 Tournament Graphs + directed:
 - https://www.codechef.com/problems/PWRTREE
+
+
+
+Prime Power Factorization:
+https://codeforces.com/blog/entry/21202
