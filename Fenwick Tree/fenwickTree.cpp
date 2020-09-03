@@ -15,6 +15,18 @@
 //keep the given array as 1-based
 //at every idx in BIT tree:: [1, n] , each BIT[idx] stores prefix sums from [lb, idx] in arr[], lb = remove rightmost set bit, the number formed +1 , is the idx. 
  
+//in a single update-> a value in array.
+//whatever idx in BIT stores, the changed number as prefix sums, those idx ke BIT[] will also be updated.
+
+//if old a[idx] = 1, new a[idx] = 6, do update(idx, +5).
+
+//how to get the next idx from current idx? -1/ find 2's complement. 2/ and with current idx. 3/ add to original idx.
+
+
+//agar query bola jaye ? 
+//e.g. (1, 12) -> ka sums kin kin idx se uthaya jayega in BIT[]-> 8 + 4(12) :: (1-8) + (9-12).
+//e.g. (1, 14) -> 8(8) + 4(12) + 2(14) -> (1-8) + (9-12) + (13-14).
+
 #include<bits/stdc++.h>
 using namespace std;
 
