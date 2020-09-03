@@ -5,6 +5,16 @@
 // in BIT[] we dont store anything at BIT[0]
 // if arr[1] to arr[n] is our input array, our BIT[1] to BIT[n] contains sum
 
+
+//IUse Case :: useful for storing prefixsums.
+//
+//prefix sum precomputation in -> O(n) using brute forces, then return in O(1).
+//update, sum, upadte , sum ..., then prefix sums wont work... worst case::: O(q * n)
+ 
+//sum , upadte boh in O(log n).
+//keep the given array as 1-based
+//at every idx in BIT tree:: [1, n] , each BIT[idx] stores prefix sums from [lb, idx] in arr[], lb = remove rightmost set bit, the number formed +1 , is the idx. 
+ 
 #include<bits/stdc++.h>
 using namespace std;
 
