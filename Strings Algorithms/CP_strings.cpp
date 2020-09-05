@@ -2,6 +2,34 @@ int Sum() { return 0; }
 template<typename T, typename... Args>
 T Sum(T a, Args... args) { return a + Sum(args...); }
  
+//reducing a number digit one by one from left
+int reduce(int x)
+{
+    string s = to_string(x);
+    int sz = s.size();
+    string ret = "";
+    for (int i = 1; i < sz; i++)
+    {
+        ret += s[i];
+    }
+
+    int cur = 1;
+    sz = ret.size();
+    int prod = ret[0] - '0';
+    int pt = 1;
+
+    while (pt < sz)
+    {
+        int curval = ret[pt] - '0';
+        prod = prod * 10 + curval;
+        pt++;
+    }
+    return prod;
+}
+
+
+
+
 class Trie {
 private:
     map<char,Trie*> m;
