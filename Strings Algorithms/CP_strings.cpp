@@ -1,6 +1,10 @@
 int Sum() { return 0; }
 template<typename T, typename... Args>
 T Sum(T a, Args... args) { return a + Sum(args...); }
+
+
+//removing a char * from complete string in one line
+s.erase(remove(s.begin(), s.end(), '*'), s.end());
  
 //reducing a number digit one by one from left
 int reduce(int x)
