@@ -169,4 +169,42 @@ signed main()
 
 */
 
+		set<int> s[5];
+		for (int i = 0; i < 6; i++)
+		{
+			int u, v, w;
+			cin >> u >> v >> w;
 
+			s[w].insert(u);
+			s[w].insert(v);
+		}
+
+		int maxm =  0;
+		for (int i = 1; i <= 4; i++)//n
+		{
+			maxm = max(maxm, (int)s[i].size());
+		}
+
+		int prod = 0;
+		for (int i = 0; i < 4; i++)
+		{
+			set<int>::iterator it;
+
+			int maxm1 = 0;
+			if ((int)s[i].size() == maxm and s[i].size() >= 2)
+			{
+				it = --s[i].end();
+				maxm1 = *it;
+				s[i].erase(it);
+
+				set<int>::iterator it2;
+				it2 = --s[i].end();
+				int maxm2 = *it2;
+				prod = max(prod, maxm1 * maxm2);
+			}
+
+
+		}
+
+		cout << maxm << endl;
+		cout << prod << endl;
